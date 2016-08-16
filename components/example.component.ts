@@ -5,7 +5,7 @@
 namespace ExampleModule {
 
     class ExampleController {
-        
+
         constructor() {
 
         }

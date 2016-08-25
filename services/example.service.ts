@@ -13,7 +13,7 @@ namespace ExampleModule {
 
 
     }
-    
+
     angular.module(moduleId).service("exampleService", ExampleService);
 
 }

@@ -195,7 +195,7 @@ namespace YoutubePlayerModule {
 				onLoadError: "&"
 			};
 			this.controller = YoutubeController;
-			this.template = HtmlTemplates.youtube.html;
+			this.templateUrl = "../templates/youtube.html";
 		}
 	}
 

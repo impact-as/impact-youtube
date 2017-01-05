@@ -1,4 +1,5 @@
 ///<reference path="../models/youtube.d.ts"/>
+///<reference path="../services/youtube.service.ts"/>
 
 
 /// Youtube API docs

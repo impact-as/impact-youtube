@@ -1,5 +1,5 @@
 /**
- * Created by mikkel on 16/08/16.
+ * Created by MST on 16/08/16.
  */
 
 namespace ExampleModule {

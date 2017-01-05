@@ -199,6 +199,6 @@ namespace YoutubePlayerModule {
 		}
 	}
 
-	angular.module(moduleId).component("youtube", new YoutubeComponent());
+	angular.module(moduleId).component("impactYoutube", new YoutubeComponent());
 
 }

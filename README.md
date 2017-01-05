@@ -1,13 +1,13 @@
 # impact-youtube
 
-Impact example module
+Impact Youtube module
 https://github.com/impact-as/impact-youtube
 
 
 Youtube module to demonstrate module structure for IMPACT A/S frontend modules
-- module file
-- folders for all types of files
-- example files for services, templates, components and models
+- conatins youtube service using Youtube player API
+- Youtube service loads Youtube code before first video starts playing
+- component with different bindings
 
 Usage:
 ```html

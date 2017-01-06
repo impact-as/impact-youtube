@@ -1,0 +1,152 @@
+// Import references
+@import "../../references.scss";
+
+// -----------------------------------------------------------------------------
+// This file contains styling for the yotube component
+// -----------------------------------------------------------------------------
+
+/// Local variables
+$youtube-icon-color                                      : rgb(3.2%, 52.7%, 40.8%) !default;
+$youtube-icon-background-color                           : #fff !default;
+
+/// ========================================================================
+/// DIVIDER
+/// ========================================================================
+
+.youtube,
+youtube {
+    display: block;
+    position: relative;
+    width: 100%;
+	height: 100%;
+	z-index: 1;
+    overflow: hidden;
+}
+
+//--- ELEMENTS ----------------------------------------------------------//
+
+.youtube__image {
+    transition: opacity 400ms ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.youtube__video {
+    left: -2%;
+    top: -2%;
+    display: block;
+    position: relative;
+    width: 104%;
+    height: 104%;
+}
+
+.youtube__icon {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    opacity: 0;
+    color: $youtube-icon-color;
+
+    & > * {
+        font-size: inherit;
+        line-height: 0; // Fix for icon alignment
+        position: relative;
+        background-color: $youtube-icon-background-color;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: inherit;
+            left: -40%;
+            top: -40%;
+            width: 180%;
+            padding-bottom: 180%;
+            border-radius: 10%;
+            z-index: -1;
+        }
+    }
+}
+
+.youtube__iframe {
+	width: 100%;
+	height: 100%;
+}
+
+//--- MODIFIERS ----------------------------------------------------------//
+
+.youtube_ready {
+    .youtube__icon {
+        opacity: 1;
+    }
+}
+
+.youtube_started {
+	.youtube__image,
+	.youtube__icon {
+		display: none;
+	}
+}
+
+.youtube_playing {
+	z-index: 1;
+    .youtube__image {
+        opacity: 0;
+    }
+    .youtube__icon {
+        opacity: 0;
+    }
+}
+
+.youtube_paused {
+	.youtube__image {
+
+	}
+    .youtube__icon {
+        opacity: 1;
+    }
+}
+
+.youtube_error {
+    .youtube__image {
+        opacity: 0;
+    }
+    .youtube__icon {
+        opacity: 0;
+    }
+}
+
+// This lets ios click go though the elements and interacting with the youtube player directly.
+// Allowing to have custom overlay on iphone and ipad
+.youtube_ios {
+	.youtube__image {
+		pointer-events: none;
+	}
+	.youtube__icon {
+		pointer-events: none;
+	}
+}
+
+
+//--- MEDIA QUERIES ----------------------------------------------------------//
